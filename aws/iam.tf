@@ -21,6 +21,17 @@ resource "aws_iam_user" "developer" {
 }
 
 #--------------------------------------------------------------
+# Access key(s)
+#--------------------------------------------------------------
+resource "aws_iam_access_key" "sudo-key" {
+	user = "${aws_iam_user.admin-sudo.name}"
+}
+
+resource "aws_iam_access_key" "developer-key" {
+	user = "${aws_iam_user.developer.name}"
+}
+
+#--------------------------------------------------------------
 # Group(s)
 #--------------------------------------------------------------
 resource "aws_iam_group" "admin-sudoers" {
@@ -32,3 +43,8 @@ resource "aws_iam_group" "developers" {
 	name = "developers"
 	path = "/"
 }
+
+#--------------------------------------------------------------
+# Group Policies/Permissions
+#--------------------------------------------------------------
+
