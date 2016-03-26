@@ -80,3 +80,23 @@ resource "aws_iam_group_policy" "developersPolicy" {
 }
 EOF
 }
+
+#--------------------------------------------------------------
+# Group Memberships
+#--------------------------------------------------------------
+resource "aws_iam_group_membership" "sudoMembers" {
+	name  = "sudoMembers"
+	users = [
+		"${aws_iam_user.adminSudo.name}"
+	]
+	group = "${aws_iam_group.adminSudoers.name}"
+}
+
+resource "aws_iam_group_membership" "developerMembers" {
+	name  = "developerMembers"
+	users = [
+		"${aws_iam_user.developer.name}"
+	]
+	group = "${aws_iam_group.developers.name}"
+}
+
