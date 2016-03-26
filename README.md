@@ -1,0 +1,3 @@
+### Managing Your AWS Account Users and Github Organization with Terraform
+
+Anyone that has been part of an organization with many moving teams, members, and projects knows that managing it can become frustrating. Anyone that gets stuck as the gatekeeper has to spend a fair amount of time clicking around in AWS console and Github and you end up with teams and users that have keys to most of the kingdom because you don’t want to deal with such fine-grained control while you’re trying to get your interesting work done. Using Terraform’s AWS provider and Github provider and pull requests as the approval process, greatly alleviates these issues.
