@@ -24,7 +24,7 @@ resource "aws_iam_user" "developer" {
 # Access key(s)
 #--------------------------------------------------------------
 resource "aws_iam_access_key" "sudoKey" {
-	user = "${aws_iam_user.admin-sudo.name}"
+	user = "${aws_iam_user.adminSudo.name}"
 }
 
 resource "aws_iam_access_key" "developerKey" {
