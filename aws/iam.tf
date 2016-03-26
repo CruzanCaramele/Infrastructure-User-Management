@@ -19,3 +19,16 @@ resource "aws_iam_user" "developer" {
 	name = "developer"
 	path = "/"
 }
+
+#--------------------------------------------------------------
+# Group(s)
+#--------------------------------------------------------------
+resource "aws_iam_group" "admin-sudoers" {
+	name = "admin-sudoers"
+	path = "/"
+}
+
+resource "aws_iam_group" "developers" {
+	name = "developers"
+	path = "/"
+}
