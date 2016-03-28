@@ -2,15 +2,15 @@
 # Provider
 #--------------------------------------------------------------
 provider "github" {
-	token       = "${var.github_token}"
-	organiztion = "${var.github_organization}" 
+	token        = "${var.github_token}"
+	organization = "${var.github_organization}" 
 }
 
 #--------------------------------------------------------------
 # Team
 #--------------------------------------------------------------
 resource "github_team" "test_team" {
-	name = "test_team"
+	name        = "test_team"
 	description = "a new team for the organiztion"
 }
 
