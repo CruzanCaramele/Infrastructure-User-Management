@@ -22,3 +22,13 @@ resource "github_team_membership" "test_user_test_team" {
 	username = "CruzanCaramele"
 	role     = "member"
 }
+
+
+#--------------------------------------------------------------
+# Team Repository
+#--------------------------------------------------------------
+resource "github_team_repository" "test_repo" {
+	team_id     = "${github_team.test_team.id}"
+	repository  = "test-repo"
+	permission  = "admin"
+}
